@@ -93,11 +93,12 @@ WSGI_APPLICATION = 'cookbook.wsgi.application'
 # Replace the entire DATABASES = { ... } block with this:
 DATABASES = {
     'default': dj_database_url.config(
-        # Feel free to alter this value to suit your local development needs.
-        default='sqlite:///db.sqlite3',
+        # Replace this value with your local database's connection string.
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
     )
 }
+
 
 
 # Password validation

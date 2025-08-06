@@ -24,6 +24,6 @@ urlpatterns = [
     path('', include('recipes.urls')), # Include your app's URLs
 ]
 
-# This is for serving media files during development
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# This line MUST be present and NOT wrapped in an 'if settings.DEBUG'
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

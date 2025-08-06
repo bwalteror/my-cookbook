@@ -1,0 +1,101 @@
+    <style>
+        body { font-family: 'Georgia', serif; background-color: #f5f3ef; color: #4a4a4a; margin: 0; }
+        .container { max-width: 960px; margin: 2rem auto; padding: 1rem; }
+        nav { background-color: #8B4513; padding: 1rem; text-align: center; }
+        nav a { color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
+        h1, h2 { color: #5a3a2e; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+        .category-card, .recipe-card { text-align: center; text-decoration: none; color: inherit; }
+        .category-card img {
+            width: 100%;
+            aspect-ratio: 3.6 / 1; /* MODIFIED LINE */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+		/* Add this to the <style> block in base.html */
+		.favorite-banner {
+            color: #b8860b; /* Darker gold */
+            font-weight: bold;
+            font-style: italic;
+            margin: -0.5rem 0 1rem 0;
+        }
+    .favorites-section {
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .favorites-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #ffd700; /* Gold color */
+        color: #4a4a4a;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+        .recipe-image { max-width: 100%; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+		/* Add this rule to the <style> block in base.html */
+
+		.nav-button {
+			background-color: #f5f3ef;
+			color: #8B4513;
+			padding: 8px 15px;
+			border-radius: 5px;
+			font-size: 1rem;
+			font-weight: normal;
+			text-decoration: none;
+			}
+			
+		.view-counter {
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: white;
+			padding: 5px 10px;
+			border-radius: 10px;
+			font-size: 0.8rem;
+			
+			/* Add these styles inside the <style> block in base.html */
+
+			.print-button {
+				padding: 10px 20px;
+				font-size: 1rem;
+				cursor: pointer;
+				background-color: #5a3a2e;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				margin-bottom: 1rem;
+			}
+
+			/* STYLES THAT ONLY APPLY WHEN PRINTING */
+			@media print {
+			/* Hide everything we don't want to print */
+			nav, .print-button, .recipe-card, .category-card, footer, hr {
+				display: none !important;
+			}
+
+			/* Ensure the main recipe content is all that's left */
+			body, .container, .content {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100%;
+				max-width: 100%;
+			}
+
+			/* Make links look like regular text when printed */
+			a, a:visited {
+				text-decoration: none;
+				color: #000 !important;
+			}
+			
+			/* Ensure the recipe image is a reasonable size on paper */
+			.recipe-image {
+				max-width: 60% !important;
+				page-break-inside: avoid;
+    }
+}
+    </style>
