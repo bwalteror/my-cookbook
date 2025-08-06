@@ -1,0 +1,17 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+    <h1>⭐ Family Favorites</h1>
+    <p>A collection of our most cherished recipes.</p>
+    <hr>
+
+    {% if recipes %}
+        <ul>
+            {% for recipe in recipes %}
+                <li><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No favorite recipes have been selected yet.</p>
+    {% endif %}
+{% endblock %}

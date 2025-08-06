@@ -1,0 +1,17 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+    <h1>Results for "{{ query }}"</h1>
+
+    {% if recipes %}
+        <p>Found {{ recipes.count }} recipe{{ recipes.count|pluralize }}.</p>
+        <ul>
+            {% for recipe in recipes %}
+                <li>{% if recipe.is_favorite %}⭐ {% endif %}<a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.name }}</a></li>
+            {% endfor %}
+			
+        </ul>
+    {% else %}
+        <p>No recipes found matching your search. Please try another keyword or return to the <a href="{% url 'category_list' %}">home page</a>.</p>
+    {% endif %}
+{% endblock %}

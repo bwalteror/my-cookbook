@@ -1,0 +1,12 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{% if recipe.is_favorite %}⭐ {% endif %}<a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.name }}</a></li>
+        {% empty %}
+            <p>No recipes in this category yet.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

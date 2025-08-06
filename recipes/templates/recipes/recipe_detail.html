@@ -1,0 +1,26 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+    <h1>{{ recipe.name }}</h1>
+
+    {% if recipe.is_favorite %}
+        <div class="favorite-banner">⭐ A family favorite recipe!</div>
+    {% endif %}
+
+    <button onclick="window.print();" class="print-button">Print Recipe</button>
+
+    <p>Category: <a href="{% url 'recipe_list' pk=recipe.category.pk %}">{{ recipe.category.name }}</a></p>
+    <hr>
+    <img src="{{ recipe.image.url }}" alt="Image for {{ recipe.name }}" class="recipe-image">
+<!--
+ Takeout ingredients and Instructions *   
+  <h2>Ingredients</h2> *
+  <div class="recipe-content">{{ recipe.ingredients }}</div> *
+
+  <h2>Instructions</h2>
+  <div class="recipe-content">{{ recipe.instructions }}</div> *
+-->
+    <div class="view-counter">
+        Viewed {{ recipe.view_count }} time{{ recipe.view_count|pluralize }}.
+    </div>
+{% endblock %}

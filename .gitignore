@@ -1,0 +1,16 @@
+# Virtual Environment
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local Database
+db.sqlite3
+
+# Static files directory built by collectstatic
+staticfiles/
+
+# IDE / Editor folders
+.vscode/
+.idea/
