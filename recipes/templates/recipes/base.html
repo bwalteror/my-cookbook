@@ -15,11 +15,11 @@
 
 ### Step 4: Final Check of Media File URL Configuration
 
-While fixing the CSS is critical, the original 500 error was likely triggered by the server not knowing how to handle image URLs. Please **double-check** that your `cookbook/urls.py` file looks exactly like this, with the `if settings.DEBUG` check removed. This is just as important as the CSS fix.
+* While fixing the CSS is critical, the original 500 error was likely triggered by the server not knowing how to handle image URLs. Please **double-check** that your `cookbook/urls.py` file looks exactly like this, with the `if settings.DEBUG` check removed. This is just as important as the CSS fix.
 
 * **File:** `cookbook/urls.py`
 
-```python
+* ```python
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings

@@ -34,8 +34,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-loca
 # DEBUG = True
 
 # To this:
-# DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+* DEBUG = True debug = true gave allsorts of errors
 # Change ALLOWED_HOSTS = ['*'] to:
 ALLOWED_HOSTS = []
 
