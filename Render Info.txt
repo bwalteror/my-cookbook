@@ -1,8 +1,0 @@
-Database
-fecw_cookbook_db
-Username
-fecw_cookbook_db_user
-Password
-PnQFf6azX05jZJMitjHO4a0VjatXVRJg
-Internal Database URL
-postgresql://fecw_cookbook_db_user:PnQFf6azX05jZJMitjHO4a0VjatXVRJg@dpg-d29ti6ur433s739s18jg-a/fecw_cookbook_db
