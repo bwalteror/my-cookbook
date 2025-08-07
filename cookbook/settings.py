@@ -153,3 +153,11 @@ if not DEBUG:
  # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    
+# Add this to the very bottom of cookbook/settings.py
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# This setting helps WhiteNoise serve files efficiently in production
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
