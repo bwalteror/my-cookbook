@@ -10,28 +10,7 @@
 
 </head>
 <body>
-* `{% load static %}` enables the `{% static %}` template tag.
-* `{% static 'recipes/style.css' %}` tells Django to correctly generate the URL for our new CSS file.
 
-### Step 4: Final Check of Media File URL Configuration
-
-* While fixing the CSS is critical, the original 500 error was likely triggered by the server not knowing how to handle image URLs. Please **double-check** that your `cookbook/urls.py` file looks exactly like this, with the `if settings.DEBUG` check removed. This is just as important as the CSS fix.
-
-* **File:** `cookbook/urls.py`
-
-* ```python
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('recipes.urls')),
-]
-
-# This line MUST be present and NOT wrapped in an 'if settings.DEBUG'
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     <nav>
     <div style="display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: auto;">
         <a href="{% url 'category_list' %}">Fern's Recipe Box</a>
