@@ -14,16 +14,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# FILE: cookbook/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
+
+# These two imports are required for this to work!
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('recipes.urls')), # Include your app's URLs
+    path('', include('recipes.urls')),
 ]
 
-
-# This line MUST be present and NOT wrapped in an 'if settings.DEBUG'
+# This line tells Django how to serve media files in production.
+# It MUST be present and NOT wrapped in an 'if' statement.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
