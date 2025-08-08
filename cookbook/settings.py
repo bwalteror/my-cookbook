@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-loca
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 # DEBUG = True debug = true gave allsorts of errors
 # Change ALLOWED_HOSTS = ['*'] to:
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://moms-digital-cookbook-web-service.onrender.com"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
