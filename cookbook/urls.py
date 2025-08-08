@@ -14,3 +14,4 @@ urlpatterns = [
 
 # This line is the fix. It adds a URL pattern for your media files.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+breakpoint()

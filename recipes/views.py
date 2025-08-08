@@ -6,12 +6,12 @@ def category_list(request):
     categories = Category.objects.all().order_by('name')
     # Path to the recipe box image
     recipe_box_image = '/STATIC/RECIPE BOX.jpg'
-        context = {
+    context = {
         'categories': categories,
         'recipe_box_image': recipe_box_image,
     }
     return render(request, 'recipes/category_list.html', context)
-
+    
 def recipe_list(request, pk):
     category = get_object_or_404(Category, pk=pk)
     # Get all recipes for this category, ordered by name
