@@ -32,7 +32,7 @@ def recipe_detail(request, pk):
     recipe.refresh_from_db()
     
     context = {
-        'recipe': recipe,w
+        'recipe': recipe,
     }
     breakpoint()    
     return render(request, 'recipes/recipe_detail.html', context)
