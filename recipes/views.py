@@ -32,8 +32,9 @@ def recipe_detail(request, pk):
     recipe.refresh_from_db()
     
     context = {
-        'recipe': recipe,
+        'recipe': recipe,w
     }
+    breakpoint()    
     return render(request, 'recipes/recipe_detail.html', context)
 
 # Add this new function to the end of recipes/views.py
