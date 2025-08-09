@@ -6,6 +6,7 @@ def category_list(request):
     categories = Category.objects.all().order_by('name')
     # Path to the recipe box image
     recipe_box_image = 'media.master_image.RECIPE BOX.jpg'
+    recipe_box_image = recipe_box_image.replace("/",".") 
     context = {
         'categories': categories,
         'recipe_box_image': recipe_box_image,
