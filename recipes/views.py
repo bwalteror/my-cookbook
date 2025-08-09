@@ -5,7 +5,7 @@ from django.db.models import F # <-- ADD THIS IMPORT
 def category_list(request):
     categories = Category.objects.all().order_by('name')
     # Path to the recipe box image
-    recipe_box_image = 'project/media/master_image/RECIPE BOX.jpg'
+    recipe_box_image = "{% Static 'RECIPE BOX.jpg'
     context = {
         'categories': categories,
         'recipe_box_image': recipe_box_image,
