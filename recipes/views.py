@@ -10,7 +10,6 @@ def category_list(request):
         'categories': categories,
         'recipe_box_image': recipe_box_image,
     }
-    breakpoint()
     return render(request, 'recipes/category_list.html', context)
     
 def recipe_list(request, pk):
