@@ -5,11 +5,12 @@ from django.db.models import F # <-- ADD THIS IMPORT
 def category_list(request):
     categories = Category.objects.all().order_by('name')
     # Path to the recipe box image
-    recipe_box_image = 'opt/render/project/src/media/master_image/RECIPE BOX.jpg'
+    recipe_box_image = 'src/media/master_image/RECIPE BOX.jpg'
     context = {
         'categories': categories,
         'recipe_box_image': recipe_box_image,
     }
+    breakpoint()
     return render(request, 'recipes/category_list.html', context)
     
 def recipe_list(request, pk):
