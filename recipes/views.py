@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Recipe
 from django.db.models import F # <-- ADD THIS IMPORT
-{% load static %}
 
 def category_list(request):
     categories = Category.objects.all().order_by('name')
