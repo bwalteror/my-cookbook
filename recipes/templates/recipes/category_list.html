@@ -2,7 +2,7 @@
 
 {% block content %}
     <div style="text-align:center; margin-bottom: 2rem;">
-	<img src="{{ recipe_box_image }}" alt="Fern's Recipe Box" style="max-width: 300px; border-radius: 10px;">--> 
+	<img src="{{ recipe_box_image }}" alt="Fern's Recipe Box" style="max-width: 300px; border-radius: 10px;">
         <h1>Recipe Categories</h1>
 		<form action="{% url 'search_results' %}" method="get" style="margin-bottom: 2rem; display: flex; gap: 0.5rem;">
 			<input type="text" name="q" placeholder="Search for a recipe..." style="flex-grow: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
